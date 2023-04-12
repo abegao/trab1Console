@@ -1,4 +1,35 @@
+//-package threadd;
+
 import java.util.Random;
+
+/*public class carros extends Thread {
+	
+	String nome;
+	int distanciaTotal;
+	int pista;
+	
+	
+	
+	int velocidade = 20;
+	int distancia;
+	int acel;
+	
+	Random random = new Random();
+	
+	public void run () {
+	
+		for(distancia=0;distancia<velocidade;) {
+			acel = random.nextInt(50);
+			distancia = distancia + acel;
+			System.out.println("ferrari percorreu:" + acel + "km" + "percorreu no total" + distancia);
+				if(distancia>velocidade) {
+					System.out.println("ferrari chegou");
+				}
+		}
+	}
+	
+	public void setNome(String nome) {
+        this.nome = nome;*/
 
 //carro herda runnable (recebe td da classe runnable)
 class Carro implements Runnable {
@@ -16,6 +47,10 @@ class Carro implements Runnable {
         this.distanciaTotal = distanciaTotal; //distancia total que o carro precisa percorrer
         this.random = new Random(); 
     }
+	
+	/*public void setDistanciaTotal(int total) {
+        distanciaTotal = total;
+    */
 
     //aplica uma aceleracao aleatoria aos carros
     private void acelerar() {
@@ -37,9 +72,9 @@ class Carro implements Runnable {
             while (!chegouLinhaChegada()) {
                 acelerar();
                 Thread.sleep(1000); //espera por 1 segundo
-                System.out.println("O " + nome + " andou " + distanciaPercorrida + "m\t e já percorreu " + distanciaPercorrida + "m");
+                System.out.println("O " + nome + " andou " + distanciaPercorrida + "m\t e ja percorreu " + distanciaPercorrida + "m");
             }
-            System.out.println(nome + " alcançou a linha de chegada!");
+            System.out.println(nome + " alcancou a linha de chegada!");
         } catch (InterruptedException e) { //permitir que a thread do carro seja corretamente
         	//interrompida e finalizada de forma adequada quando ocorrer uma interrupcao.
             System.out.println("A thread do " + nome + " foi interrompida."); //caso de ruim
